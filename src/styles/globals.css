@@ -1,0 +1,110 @@
+@tailwind utilities;
+@import '~primeicons/primeicons.css';
+@import '~primereact/resources/themes/saga-blue/theme.css';
+@import '~primereact/resources/primereact.min.css';
+
+:root {
+    --line-gap: 10px;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+h1,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+    color: #444;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -600px;
+    height: 100%;
+    width: 600px;
+    background-color: #ffffff;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.sidebar.show {
+    right: 0;
+}
+
+.sidebar.hide {
+    right: -600px;
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--line-gap);
+}
+
+.sidebar-header h2 {
+    font-size: 1.5rem;
+    color: #007adf;
+    margin-bottom: 5px;
+}
+
+.button {
+    background-color: #007adf;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #005bb5;
+}
+
+.input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: var(--line-gap);
+}
+
+.input:focus {
+    border-color: #007adf;
+    outline: none;
+}
+
+
+
+.p-dropdown .p-dropdown-label {
+    color: #444;
+}
+
+.p-dropdown {
+    width: 80%;
+}
+/* Mobile styles */
+@media (max-width: 768px) { 
+    .sidebar {
+        right: -400px; 
+        width: 400px; 
+    }
+
+    .sidebar.hide {
+        right: -400px; 
+    }
+}
